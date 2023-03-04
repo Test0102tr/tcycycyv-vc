@@ -13,7 +13,7 @@ _G.Key = "troll-roblox"
 _G.KeyInput = "string"
 
 function MakeScriptHub()
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Troll-Hub/Scripts/main/New%20Animal%20Simulator.lua')))()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Test0102tr/tcycycyv-vc/main/teoric.lua')))()
 end
 
 function CorrectKeyNotification()
