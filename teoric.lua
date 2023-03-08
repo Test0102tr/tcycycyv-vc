@@ -129,7 +129,7 @@ rootPart.CFrame = CFrame.new(148.361176, 669.264893, 1441.97571, -0.023542881, 0
 Griffin()
 	end    
 })
-   -- REALIDADE
+-- Criar a guia "REALIDADE" e a seção "pirulito"
 local RealidadeTab = Window:MakeTab({
     Name = "REALIDADE",
     Icon = "rbxassetid://4483345998",
@@ -140,10 +140,18 @@ local Section = RealidadeTab:AddSection({
     Name = "pirulito"
 })
 
--- Valor
+-- Valor da variável global
 _G.Pirulito = false
 
--- Função
+-- Função para pular três vezes
+function PularTresVezes()
+    for i = 1, 3 do
+        game:GetService("Players").LocalPlayer.Character.Humanoid.Jump = true
+        wait(0.5)
+    end
+end
+
+-- Função para imprimir a mensagem "Pirulito ativado!"
 function Pirulito()
     while _G.Pirulito == true do
         print("Pirulito ativado!")
@@ -151,7 +159,7 @@ function Pirulito()
     end
 end
 
--- Toggle
+-- Adicionar a caixa de seleção à seção "pirulito"
 RealidadeTab:AddToggle({
     Name = "Pirulito",
     Default = false,
@@ -160,5 +168,29 @@ RealidadeTab:AddToggle({
         Pirulito()
     end    
 })
+
+-- Adicionar o botão "Pular 3 vezes" à seção "pirulito"
+Section:AddButton({
+    Name = "Pular 3 vezes",
+    Callback = PularTresVezes
+})
+
+-- Criar um objeto ScreenGui para adicionar o botão na tela
+local gui = Instance.new("ScreenGui")
+gui.Name = "BotaoPular"
+gui.Parent = game:GetService("Players").LocalPlayer.PlayerGui
+
+-- Criar o botão
+local botao = Instance.new("TextButton")
+botao.Name = "BotaoPular"
+botao.Text = "Pular 3 vezes"
+botao.Size = UDim2.new(0, 150, 0, 50)
+botao.Position = UDim2.new(0.5, -75, 0.8, 0)
+botao.Parent = gui
+
+-- Adicionar a função PularTresVezes ao botão
+botao.MouseButton1Click:Connect(function()
+    PularTresVezes()
+end)
         
 end
