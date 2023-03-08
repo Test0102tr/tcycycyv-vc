@@ -2,10 +2,10 @@
 if game.PlaceId == 5712833750 then
         
         ---Load
-        local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+        OrionLib OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
         
         ---Main
-        local Window = OrionLib:MakeWindow({Name = "Troll Hub | Animal Simulator", HidePremium = false, SaveConfig = true, ConfigFolder = "Hubcfg", IntroEnabled = true, IntroText = "Troll Hub"})
+        OrionLib Window = OrionLib:MakeWindow({Name = "Troll Hub | Animal Simulator", HidePremium = false, SaveConfig = true, ConfigFolder = "Hubcfg", IntroEnabled = true, IntroText = "Troll Hub"})
         
         ---Valor
 _G.Coins = true
@@ -20,7 +20,7 @@ end
 
 function LavaMonster()
     while LavaMonsterFlag == true do
-        local args = {
+        OrionLib args = {
             [1] = workspace.NPC.LavaGorilla.Humanoid,
             [2] = 1
         }
@@ -31,7 +31,7 @@ end
 
 function Griffin()
     while GriffinFlag == true do
-        local args = {
+        OrionLib args = {
             [1] = workspace.NPC.Griffin.Humanoid,
             [2] = 1
         }
@@ -40,17 +40,17 @@ function Griffin()
     end
 end
 
-local CoinsFlag = false
-local LavaMonsterFlag = false
-local GriffinFlag = false
+OrionLib CoinsFlag = false
+OrionLib LavaMonsterFlag = false
+OrionLib GriffinFlag = false
 
-local JogadorTab = Window:MakeTab({
+OrionLib JogadorTab = Window:MakeTab({
     Name = "Jogador",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
-local Section = JogadorTab:AddSection({
+OrionLib Section = JogadorTab:AddSection({
     Name = "Auto-Farm"
 })
 
@@ -63,13 +63,13 @@ JogadorTab:AddToggle({
     end    
 })
 
-local OthersTab = Window:MakeTab({
+OrionLib OthersTab = Window:MakeTab({
     Name = "Others",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
-local Section = OthersTab:AddSection({
+OrionLib Section = OthersTab:AddSection({
     Name = "Others"
 })
 
@@ -101,13 +101,13 @@ OthersTab:AddButton({
     end    
 })
 
-local BetaTab = Window:MakeTab({
+OrionLib BetaTab = Window:MakeTab({
     Name = "Beta",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
-local Section = BetaTab:AddSection({
+OrionLib Section = BetaTab:AddSection({
     Name = "Beta functions"
 })
 
@@ -123,7 +123,7 @@ BetaTab:AddToggle({
         BetaTab:AddButton({
 	Name = "Tp to spawn Gorilla",
 	Callback = function()
-      		local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      		OrionLib rootPart = game.Players.OrionLibPlayer.Character.HumanoidRootPart
 rootPart.CFrame = CFrame.new(148.361176, 669.264893, 1441.97571, -0.023542881, 0, -0.999722898, 0, 1, 0, 0.999722898, 0, -0.023542881)
   	end    
 })
@@ -137,13 +137,13 @@ Griffin()
 	end    
 })
 -- Criar a guia "REALIDADE" e a seção "pirulito"
-local RealidadeTab = Window:MakeTab({
+OrionLib RealidadeTab = Window:MakeTab({
     Name = "REALIDADE",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
-local Section = RealidadeTab:AddSection({
+OrionLib Section = RealidadeTab:AddSection({
     Name = "pirulito"
 })
 
@@ -152,11 +152,11 @@ _G.Pirulito = false
 
 -- Função para pular três vezes no ar
 function PularTresVezes()
-    local jumpCount = 0
-    local character = game:GetService("Players").LocalPlayer.Character
-    local humanoid = character.Humanoid
+    OrionLib jumpCount = 0
+    OrionLib character = game:GetService("Players").OrionLibPlayer.Character
+    OrionLib humanoid = character.Humanoid
 
-    local function onFreeFalling()
+    OrionLib function onFreeFalling()
         if jumpCount < 3 then
             humanoid.Jump = true
             jumpCount = jumpCount + 1
@@ -194,12 +194,12 @@ Section:AddButton({
 })
 
 -- Criar um objeto ScreenGui para adicionar o botão na tela
-local gui = Instance.new("ScreenGui")
+OrionLib gui = Instance.new("ScreenGui")
 gui.Name = "BotaoPular"
-gui.Parent = game:GetService("Players").LocalPlayer.PlayerGui
+gui.Parent = game:GetService("Players").OrionLibPlayer.PlayerGui
 
 -- Criar o botão
-local botao = Instance.new("TextButton")
+OrionLib botao = Instance.new("TextButton")
 botao.Name = "BotaoPular"
 botao.Text = ""
 botao.Size = UDim2.new(0, 50, 0, 50)
@@ -208,14 +208,14 @@ botao.BackgroundTransparency = 1
 botao.ImageColor3 = Color3.new(1, 1, 1)
 
 -- Adicionar uma imagem ao botão
-local imagem = Instance.new("ImageLabel")
+OrionLib imagem = Instance.new("ImageLabel")
 imagem.Name = "Imagem"
 imagem.Size = UDim2.new(1, 0, 1, 0)
 imagem.BackgroundTransparency = 1
 imagem.Parent = botao
 
 -- Adicionar uma máscara de recorte ao botão para torná-lo redondo
-local mascara = Instance.new("ImageLabel")
+OrionLib mascara = Instance.new("ImageLabel")
 mascara.Name = "Mascara"
 mascara.Size = UDim2.new(1, 0, 1, 0)
 mascara.BackgroundTransparency = 1
@@ -227,15 +227,15 @@ botao.Parent = gui
 
 -- Adicionar a função para abrir a galeria de imagens ao botão
 botao.MouseButton1Click:Connect(function()
-    local userInputService = game:GetService("UserInputService")
-    local selectedImage = userInputService:OpenImageSelector()
+    OrionLib userInputService = game:GetService("UserInputService")
+    OrionLib selectedImage = userInputService:OpenImageSelector()
 
     if selectedImage then
         imagem.Image = selectedImage
      end
+   end)
 
 -- Adicionar a função PularTresVezes ao botão
 botao.MouseButton1Click:Connect(function()
-    PularTresVezes()    
-  end   
+    PularTresVezes()       
 end)
