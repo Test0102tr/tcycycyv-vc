@@ -143,12 +143,23 @@ local Section = RealidadeTab:AddSection({
 -- Valor da variável global
 _G.Pirulito = false
 
--- Função para pular três vezes
+-- Função para pular três vezes no ar
 function PularTresVezes()
-    for i = 1, 3 do
-        game:GetService("Players").LocalPlayer.Character.Humanoid.Jump = true
-        wait(0.5)
+    local jumpCount = 0
+    local character = game:GetService("Players").LocalPlayer.Character
+    local humanoid = character.Humanoid
+
+    local function onFreeFalling()
+        if jumpCount < 3 then
+            humanoid.Jump = true
+            jumpCount = jumpCount + 1
+        else
+            humanoid.FreeFalling:Disconnect()
+        end
     end
+
+    humanoid.FreeFalling:Connect(onFreeFalling)
+    humanoid.Jump = true
 end
 
 -- Função para imprimir a mensagem "Pirulito ativado!"
