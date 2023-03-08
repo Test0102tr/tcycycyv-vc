@@ -233,9 +233,9 @@ botao.MouseButton1Click:Connect(function()
     if selectedImage then
         imagem.Image = selectedImage
      end
-   end)
 
 -- Adicionar a função PularTresVezes ao botão
 botao.MouseButton1Click:Connect(function()
-    PularTresVezes()       
+    PularTresVezes()    
+  end   
 end)
