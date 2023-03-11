@@ -641,7 +641,7 @@ Toggle = Section:CreateToggle('[Dummy] (Single Fireball + Hit)', false, Color3.f
         task.spawn(function()
 
             local Delay = 0
-            local runningFireball = false
+            local runningFireball = true
             local waittime = 0.1
             while NewLoop do
                 task.wait()
@@ -725,7 +725,7 @@ Toggle = Section:CreateToggle('[Dummy] (All Fireballs + Hit - [MultiToggle])', f
 
         task.spawn(function()
 
-            local runningFireball = false
+            local runningFireball = true
             while NewLoop do
                 task.wait()
 
@@ -761,11 +761,11 @@ Toggle = Section:CreateToggle('[Dummy] (All Fireballs + Hit - [MultiToggle])', f
                             end
 
                             fireballsTotal = Fireballs
-                            Fireballs = 0
-                            runningFireball = false
+                            Fireballs = 10
+                            runningFireball = true
                         end)
                         if b then
-                            runningFireball = false
+                            runningFireball = true
                         end
                     end)
                 end
@@ -1434,7 +1434,7 @@ if VIP then
         pcall(function()
             task.spawn(function()
                 waittime = 0.1
-                runningFireball = false
+                runningFireball = true
                 while Aura do
                     wait(2)
                     print("AURA: ",Aura)
@@ -1470,7 +1470,7 @@ if VIP then
                                 end
                                 fireballsTotal = Fireballs
                                 Fireballs = 0
-                                runningFireball = false
+                                runningFireball = true
                             end)
                         end)
                     end
@@ -1607,7 +1607,7 @@ if VIP then
 
 
             task.spawn(function()
-                runningFireball = false
+                runningFireball = true
                 while FireAura do
                     wait(1)
                     print(FireAura)
@@ -1636,7 +1636,7 @@ if VIP then
                                         end
                                     end
                                 end
-                                runningFireball = false
+                                runningFireball = true
                             end)
                         end)
                     end
