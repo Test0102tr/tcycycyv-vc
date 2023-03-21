@@ -1,6 +1,6 @@
 {                                                                   "object": "list",
   "data": [                                                           {                                                                   "id": "babbage",
-      "object": "model",
+      "object": "text-davinci-003",
       "created": 1649358449,
       "owned_by": "openai",
       "permission": [
