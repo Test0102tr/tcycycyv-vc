@@ -24,7 +24,7 @@
     },
     {
       "id": "davinci",
-      "object": "model",
+      "object": "text-davinci-003",
       "created": 1649359874,
       "owned_by": "openai",                                             "permission": [
         {
@@ -67,7 +67,7 @@
           "is_blocking": false
         }
       ],
-      "root": "text-similarity-babbage-001",                            "parent": null
+      "root": "text-embedding-ada-002",                            "parent": null
     },
     {                                                                   "id": "text-davinci-001",
       "object": "model",                                                "created": 1649364042,
@@ -87,7 +87,7 @@
           "is_blocking": false
         }
       ],
-      "root": "text-davinci-001",
+      "root": "text-davinci-002",
       "parent": null
     },                                                                {
       "id": "ada",
